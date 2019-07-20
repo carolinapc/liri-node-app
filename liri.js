@@ -1,23 +1,46 @@
 const spotify = require('./api/spotify.js');
 const events = require('./api/bandsintown.js');
 const movie = require('./api/omdb.js');
-const execCmds = require('./api/do-what-it-says.js');
+const readCommands = require('./functions/read-commands.js');
+const log = require('./functions/log.js');
 
 function msgErrorParams(msg){
     console.log("*****************************************************");
-    console.log(`${msg}! Choose one of those:`);
-    console.log("   concert-this <band/artist>");
-    console.log("     -> searchs the bands in town artist events");
-    console.log("   spotify-this-song <song>");
-    console.log("     -> shows information about the song");
-    console.log("   movie-this <movie>");
-    console.log("     -> shows information about the movie");
-    console.log("   do-what-it-says");
-    console.log("     -> executes comands from the random.txt file");
+    console.log(msg);
+    console.log("Choose one of those:");
+    console.log("* concert-this <band/artist>");
+    console.log("\t-> searchs the bands in town artist events");
+    console.log("* spotify-this-song <song>");
+    console.log("\t-> shows information about the song");
+    console.log("* movie-this <movie>");
+    console.log("\t-> shows information about the movie");
+    console.log("* do-what-it-says");
+    console.log("\t-> executes comands from the random.txt file");
     console.log("*****************************************************");    
 }
 
+function doWhatItSays(){
+    var dataLog = "";
+    var file = "./random.txt";
+    var command = readCommands(file);
+    
+    if(command.length != 0){
+        //avoid endless loop
+        if (command[0] !== "do-what-it-says"){
+            dataLog += `\n=> System Command (from ${file}): \n\t${command[0]} ${command[1]}`;
+
+            log(dataLog);
+            console.log(dataLog);
+            
+            execute(command[0],command[1]);
+        }
+    }
+
+}
+
+
 function execute(cmd, arg){
+    
     switch (cmd) {
         case "concert-this":
             events(arg);
@@ -29,13 +52,8 @@ function execute(cmd, arg){
             movie(arg);
             break;
         case "do-what-it-says":
-            var command = execCmds("./random.txt");
-            
-            if (command[0] !== "do-what-it-says"){
-                console.log(`Command executed: ${command[0]} ${command[1]}`);
-                execute(command[0],command[1]);
-            }
-            
+            doWhatItSays();
+
             break;
                             
         default:
@@ -55,7 +73,14 @@ if(process.argv.length === 2){
 else{
     var cmd = process.argv[2];
     var arg = process.argv[3];
+    var dataLog = "";
 
+    //log the user command
+    dataLog += "\n========================================";
+    dataLog += `\n=> User Command: ${cmd} ${(arg !== undefined)?arg:""}`;    
+    log(dataLog);
+    
+    console.log(dataLog);
     execute(cmd,arg);
 }
 
