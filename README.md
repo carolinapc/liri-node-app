@@ -4,7 +4,7 @@ LIRI is a command line node app that takes in parameters and gives you back data
 
 ## How It Works
 
-**node liri.js <command> <parameter>**
+**`node liri.js <command> <parameter>`**
 
 LIRI can take one of the following commands:
 
