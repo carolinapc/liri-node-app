@@ -1,12 +1,11 @@
 const spotify = require('./api/spotify.js');
 const events = require('./api/bandsintown.js');
-//const movie = require('./api/omdb.js');
+const movie = require('./api/omdb.js');
+//const execcmds = require('./api/do-what-it-says.js');
 
-
-if(process.argv.length === 2){
-
+function msgErrorParams(msg){
     console.log("*****************************************************");
-    console.log("Parameter missing! Choose one of those:");
+    console.log(`${msg}! Choose one of those:`);
     console.log("   concert-this <band/artist>");
     console.log("     -> searchs the bands in town artist events");
     console.log("   spotify-this-song <song>");
@@ -15,8 +14,13 @@ if(process.argv.length === 2){
     console.log("     -> shows information about the movie");
     console.log("   do-what-it-says");
     console.log("     -> executes comands from the random.txt file");
-    console.log("*****************************************************");
+    console.log("*****************************************************");    
+}
 
+//** MAIN **/
+
+if(process.argv.length === 2){
+    msgErrorParams("Argument missing!");
     process.exit();
 }
 else{
@@ -31,14 +35,14 @@ else{
             spotify(arg);
             break;
         case "movie-this":
-            //movie(arg);
+            movie(arg);
             break;
         case "do-what-it-says":
-    
+            //execcmds();
             break;
                             
         default:
-            console.log("nothing");
+            msgErrorParams("Argument Invalid!");
             
             break;
     }
@@ -46,8 +50,3 @@ else{
 }
 
     
-
-
-
-
-
