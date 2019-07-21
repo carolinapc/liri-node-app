@@ -33,9 +33,9 @@ do-what-it-says |  |  Execute the command stored in the random.txt file with the
 
 ![demo](demo/do-what-it-says.gif)
 
-
 ## The log.txt file
 
 LIRI appends every command and its data into the **log.txt** file.
 
-##
+![demo](demo/log-data.gif)
+
