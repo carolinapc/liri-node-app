@@ -29,6 +29,11 @@ do-what-it-says |  |  Execute the command stored in the random.txt file with the
 
 ![demo](demo/movie-this.gif)
 
+**`node liri.js do-what-it-says`**
+
+![demo](demo/do-what-it-says.gif)
+
+
 ## The log.txt file
 
 LIRI appends every command and its data into the **log.txt** file.
