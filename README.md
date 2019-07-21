@@ -25,6 +25,10 @@ do-what-it-says |  |  Execute the command stored in the random.txt file with the
 
 ![demo](demo/spotify-this-song.gif)
 
+**`node liri.js movie-this anaconda`**
+
+![demo](demo/movie-this.gif)
+
 ## The log.txt file
 
 LIRI appends every command and its data into the **log.txt** file.
