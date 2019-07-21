@@ -19,7 +19,7 @@ do-what-it-says |  |  Execute the command stored in the random.txt file with the
 
 **`node liri.js concert-this "Alanis Morissette"`**
 
-(https://drive.google.com/file/d/1nCFYhpgEWnjRm2reMSWJBP8L_y1qwSF0/view)
+![Demo](https://drive.google.com/file/d/1nCFYhpgEWnjRm2reMSWJBP8L_y1qwSF0/view)
 
 ## The log.txt file
 
