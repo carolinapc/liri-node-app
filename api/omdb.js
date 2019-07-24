@@ -26,7 +26,7 @@ function renderInfo(response){
     dataLog += `\nTitle: ${movie.Title}`;
     dataLog += `\nYear: ${movie.Year}`;
     dataLog += `\nIMDB Rating: ${movie.imdbRating}`;
-    dataLog += `\nRotten Tomatoes Rating: ${movie.Ratings[1].Value}`;
+    dataLog += `\nRotten Tomatoes Rating: ${(movie.Ratings[1] !== undefined)?movie.Ratings[1].Value:'N/A'}`;
     dataLog += `\nCountry: ${movie.Country}`;
     dataLog += `\nLanguage: ${movie.Language}`;
     dataLog += `\nPlot: ${movie.Plot}`;
