@@ -42,8 +42,9 @@ LIRI appends every command and its data into the **log.txt** file.
 ## Instructions for the API keys
 
 Create the **.env** file on the root with the following structure:
-
+```
 SPOTIFY_ID=YOUR_SPOTIFY_ID
 SPOTIFY_SECRET=YOUR_SPOTIFY_SECRET
 OMDB_KEY=YOUR_OMDB_KEY
 BANDSINTOWN_KEY=YOUR_BANDSINTOWN_KEY
+```
