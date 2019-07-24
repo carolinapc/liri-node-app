@@ -7,7 +7,7 @@ var dataLog = "";
 
 function getBandInfo(band){
     
-    if(band === undefined){
+    if(band === undefined || band === ""){
         dataLog += "\n\nParameter is missing! you need to pass a band/artist.";
         dataLog += "\n\tconcert-this <band/artist>\n";
         console.log(dataLog);

@@ -5,7 +5,7 @@ var dataLog = "";
 
 function getSongInfo(song){
 
-    if(song === undefined){
+    if(song === undefined || song === ""){
         song = "The Sign";
     }
     else{

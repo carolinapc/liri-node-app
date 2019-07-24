@@ -72,7 +72,7 @@ if(process.argv.length === 2){
 }
 else{
     var cmd = process.argv[2];
-    var arg = process.argv.slice(3).join(" ");
+    var arg = process.argv.slice(3).join(" ").trim();
     var dataLog = "";
 
     //log the user command

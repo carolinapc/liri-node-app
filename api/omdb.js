@@ -6,7 +6,7 @@ var dataLog = "";
 
 function getMovieInfo(title){
 
-    if(title === undefined){
+    if(title === undefined || title === ""){
         dataLog += `\nIf you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tt0485947/`;
         dataLog += "\nIt's on Netflix!";
         title = "Mr. Nobody";
