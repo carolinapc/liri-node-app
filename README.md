@@ -17,7 +17,7 @@ do-what-it-says |  |  Execute the command stored in the random.txt file with the
 
 ### Examples
 
-**`node liri.js concert-this "Alanis Morissette"`**
+**`node liri.js concert-this Alanis Morissette`**
 
 ![demo](demo/concert-this.gif)
 
